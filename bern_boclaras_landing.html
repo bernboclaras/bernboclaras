@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bern Boclaras — Executive Admin VA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F2A44;--teal:#2F7F8F;--green:#3FBF7F;--lightbg:#f4f6f8;--white:#ffffff;--muted:#6b7a8d;--border:#dde4ea}
+body{font-family:'Inter',sans-serif;background:var(--lightbg);color:var(--navy)}
+.hero{background:var(--white);padding:2.5rem 2rem;text-align:center;border-bottom:1px solid var(--border);position:relative}
+.dot-grid{position:absolute;top:1.5rem;right:1.5rem;display:grid;grid-template-columns:repeat(4,6px);gap:5px}
+.dot-grid span{width:6px;height:6px;border-radius:50%;background:#c8d4de;display:block}
+.logo-sub{font-size:0.72rem;letter-spacing:1.5px;color:var(--teal);text-transform:uppercase;font-weight:500;margin-bottom:1.8rem}
+.hero-left-bar{display:inline-block;border-left:4px solid var(--teal);padding-left:1rem;text-align:left;margin-bottom:1.2rem}
+.hero h1{font-family:'Poppins',sans-serif;font-size:1.9rem;font-weight:800;line-height:1.15;color:var(--navy);text-transform:uppercase}
+.hero h1 span{color:var(--green)}
+.hero-sub{font-size:0.88rem;color:var(--muted);margin:0.8rem auto 0;max-width:420px;line-height:1.7;font-weight:300}
+.hero-sub span{color:var(--teal);font-weight:500}
+.icons-wrap{background:var(--white);border-bottom:1px solid var(--border)}
+.icons-bar{padding:1.5rem 2rem;display:flex;justify-content:center;flex-wrap:wrap;max-width:800px;margin:0 auto}
+.icon-item{flex:1;min-width:110px;text-align:center;padding:0.5rem 0.8rem;border-right:1px solid var(--border)}
+.icon-item:last-child{border-right:none}
+.icon-circle{width:44px;height:44px;border-radius:50%;background:var(--lightbg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:20px;color:var(--teal)}
+.icon-item .lbl{font-family:'Poppins',sans-serif;font-size:0.7rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.5px;line-height:1.3}
+.icon-item .sub{font-size:0.68rem;color:var(--green);font-weight:500;text-transform:uppercase;letter-spacing:0.5px}
+.section{padding:2.5rem 2rem;max-width:800px;margin:0 auto}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:0.4rem}
+.section h2{font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.svc-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.3rem;border-top:3px solid var(--teal)}
+.svc-icon{font-size:20px;color:var(--teal);margin-bottom:8px}
+.svc-card h3{font-family:'Poppins',sans-serif;font-size:0.83rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+.svc-card p{font-size:0.77rem;color:var(--muted);line-height:1.65}
+.portfolio-section{background:var(--white);padding:2.5rem 2rem}
+.portfolio-inner{max-width:800px;margin:0 auto}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.port-card{background:var(--lightbg);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.port-thumb{height:110px;background:var(--lightbg);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative}
+.port-thumb i{font-size:32px;color:var(--border)}
+.port-badge{position:absolute;top:8px;left:8px;background:var(--teal);color:var(--white);font-size:10px;font-weight:600;padding:3px 8px;border-radius:3px;letter-spacing:0.5px;font-family:'Poppins',sans-serif}
+.port-body{padding:1rem;background:var(--white)}
+.port-body h3{font-family:'Poppins',sans-serif;font-size:0.83rem;font-weight:600;color:var(--navy);margin-bottom:4px}
+.port-body p{font-size:0.75rem;color:var(--muted);line-height:1.55}
+.port-placeholder{font-size:0.72rem;color:#bbb;font-style:italic;margin-top:6px}
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2rem;padding-left:1rem}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-1.55rem;top:4px;width:12px;height:12px;border-radius:50%;background:var(--teal);border:2px solid var(--white);box-shadow:0 0 0 2px var(--teal)}
+.tl-current .tl-dot{background:var(--green);box-shadow:0 0 0 2px var(--green)}
+.tl-date{font-size:0.72rem;color:var(--teal);font-weight:500;letter-spacing:0.5px;margin-bottom:3px;text-transform:uppercase}
+.tl-current .tl-date{color:var(--green)}
+.tl-role{font-family:'Poppins',sans-serif;font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+.tl-company{font-size:0.8rem;color:var(--muted);font-weight:500;margin-bottom:6px}
+.tl-desc{font-size:0.8rem;color:#444;line-height:1.7;font-weight:300}
+.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tl-tag{background:var(--lightbg);border:1px solid var(--border);border-radius:3px;font-size:0.7rem;color:var(--navy);padding:3px 8px;font-weight:500}
+.divider{border:none;border-top:1px solid var(--border);margin:0 2rem}
+.about{background:var(--white)}
+.about .inner{max-width:800px;margin:0 auto;padding:2.5rem 2rem}
+.about p{font-size:0.88rem;color:#3a3a3a;line-height:1.8;margin-bottom:0.9rem;font-weight:300}
+.about p strong{color:var(--navy);font-weight:600}
+.stats{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
+.stat .num{font-family:'Poppins',sans-serif;font-size:1.6rem;color:var(--teal);font-weight:700}
+.stat .lbl{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.cta-band{background:var(--navy);padding:2.5rem 2rem;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;bottom:-40px;right:-20px;width:200px;height:200px;border-radius:50%;background:rgba(47,127,143,0.1)}
+.cta-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.cta-arrow{width:48px;height:48px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--white);flex-shrink:0}
+.cta-text{flex:1}
+.cta-text h3{font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+.cta-text h3 span{color:var(--green)}
+.cta-text p{font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300}
+.cta-btn{background:var(--green);color:var(--navy);font-family:'Poppins',sans-serif;font-size:0.85rem;font-weight:600;padding:11px 22px;border-radius:4px;border:none;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block}
+.cta-btn:hover{background:#4dd490}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:2rem;background:var(--white);border-top:1px solid var(--border)}
+.contact-link{display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:4px;color:var(--navy);font-size:0.82rem;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none}
+.contact-link:hover{border-color:var(--teal);color:var(--teal)}
+.footer{background:var(--lightbg);padding:1rem 2rem;text-align:center;font-size:11px;color:var(--muted);letter-spacing:1.5px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="dot-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="logo-sub">Executive Admin | Systems &amp; Workflow Support</div>
+  <div class="hero-left-bar">
+    <h1>Your dedicated<br><span>Executive Admin</span><br>behind the scenes</h1>
+  </div>
+  <p class="hero-sub">It's not about doing more.<br>It's about <span>focusing on what matters.</span></p>
+</div>
+
+<div class="icons-wrap">
+  <div class="icons-bar">
+    <div class="icon-item"><div class="icon-circle"><i class="ti ti-clock"></i></div><div class="lbl">Focus on</div><div class="sub">Priorities</div></div>
+    <div class="icon-item"><div class="icon-circle"><i class="ti ti-checklist"></i></div><div class="lbl">Delegate</div><div class="sub">The rest</div></div>
+    <div class="icon-item"><div class="icon-circle"><i class="ti ti-chart-bar"></i></div><div class="lbl">Create time</div><div class="sub">To grow</div></div>
+    <div class="icon-item"><div class="icon-circle"><i class="ti ti-users"></i></div><div class="lbl">Build a business</div><div class="sub">That runs</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">What I do</div>
+  <h2>Services I offer</h2>
+  <div class="services-grid">
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-settings-automation"></i></div><h3>Systems &amp; Automation</h3><p>GoHighLevel CRM setup, pipeline management, and workflow automation so no lead falls through the cracks.</p></div>
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-users"></i></div><h3>Community &amp; CRM</h3><p>Circle.so community moderation, member engagement, and CRM organization to keep your community thriving.</p></div>
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-calendar"></i></div><h3>Executive Admin</h3><p>Calendar management, inbox handling, scheduling, and day-to-day admin tasks so you can focus on growth.</p></div>
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-speakerphone"></i></div><h3>Social Media Support</h3><p>Content scheduling, consistency management, and digital marketing support across your platforms.</p></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="portfolio-section">
+  <div class="portfolio-inner">
+    <div class="section-label">Sample work</div>
+    <h2 style="font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem">Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="port-card"><div class="port-thumb"><i class="ti ti-layout-dashboard"></i><span class="port-badge">GoHighLevel</span></div><div class="port-body"><h3>CRM Pipeline Setup</h3><p>Lead management workflow with automated follow-up sequences and pipeline stages.</p><div class="port-placeholder">→ Add your screenshot here</div></div></div>
+      <div class="port-card"><div class="port-thumb"><i class="ti ti-users-group"></i><span class="port-badge">Circle.so</span></div><div class="port-body"><h3>Community Management</h3><p>Organized community structure with engagement workflows and member onboarding.</p><div class="port-placeholder">→ Add your screenshot here</div></div></div>
+      <div class="port-card"><div class="port-thumb"><i class="ti ti-bolt"></i><span class="port-badge">Automation</span></div><div class="port-body"><h3>Workflow Automation</h3><p>Email marketing automation and backend process flows that reduce manual work.</p><div class="port-placeholder">→ Add your screenshot here</div></div></div>
+      <div class="port-card"><div class="port-thumb"><i class="ti ti-brand-instagram"></i><span class="port-badge">Social Media</span></div><div class="port-body"><h3>Content &amp; Scheduling</h3><p>Branded LinkedIn content and consistent social media scheduling for online presence.</p><div class="port-placeholder">→ Add your LinkedIn posts here</div></div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-label">Background</div>
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="tl-item tl-current">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Jan 2025 – Present · Global Virtual Experts · Remote</div>
+      <div class="tl-role">Executive Admin Assistant / Community Manager</div>
+      <div class="tl-company">Freelance · United States</div>
+      <div class="tl-desc">Supporting founders and teams by managing Circle.so communities, handling GoHighLevel CRM and workflow automation, overseeing Facebook and Instagram content, and providing proactive executive and operational support.</div>
+      <div class="tl-tags"><span class="tl-tag">GoHighLevel</span><span class="tl-tag">Circle.so</span><span class="tl-tag">CRM</span><span class="tl-tag">Automation</span><span class="tl-tag">Community Management</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Apr 2022 – Dec 2025 · 3 years 9 months · Remote</div>
+      <div class="tl-role">Property Manager</div>
+      <div class="tl-company">MAF Management · Part-time · United States</div>
+      <div class="tl-desc">Supported daily operations as an Executive Admin within property management — organizing and streamlining administrative processes, managing communications, and coordinating tasks to keep day-to-day activities structured and on track.</div>
+      <div class="tl-tags"><span class="tl-tag">Operations</span><span class="tl-tag">Admin Support</span><span class="tl-tag">Communications</span><span class="tl-tag">Task Coordination</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Mar 2012 – Dec 2022 · 10 years 10 months · Remote</div>
+      <div class="tl-role">English Second Language Teacher</div>
+      <div class="tl-company">RareJob Philippines, Inc. · Full-time</div>
+      <div class="tl-desc">Taught English to Japanese students for over 10 years, building structured workflows for lesson planning, student progress tracking, and communication. Developed strong time management, cross-cultural communication, and organizational systems.</div>
+      <div class="tl-tags"><span class="tl-tag">Workflow Systems</span><span class="tl-tag">International Clients</span><span class="tl-tag">Communication</span><span class="tl-tag">Organization</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Davao, Philippines</div>
+      <div class="tl-role">Bachelor's Degree</div>
+      <div class="tl-company">University of Southeastern Philippines</div>
+      <div class="tl-desc">Academic foundation in communication, research, and critical thinking.</div>
+      <div class="tl-tags"><span class="tl-tag">University of Southeastern Philippines</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="about">
+  <div class="inner">
+    <div class="section-label">About me</div>
+    <h2 style="font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1rem">Hi, I'm Bern Boclaras</h2>
+    <p>I'm an <strong>Executive Admin VA based in Davao, Philippines</strong>, specializing in helping online business owners take the backend off their plate completely.</p>
+    <p>My expertise is in <strong>GoHighLevel, Circle.so, and AI-assisted workflows</strong> — the exact tools modern coaches and agency owners rely on. I don't just do tasks; I build systems that run without you.</p>
+    <p>With over <strong>13 years working with international clients</strong> across teaching, property management, and executive admin roles, I bring reliability, clear communication, and a structured approach to everything I do.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">13+</div><div class="lbl">Years experience</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Remote ready</div></div>
+      <div class="stat"><div class="num">GMT+8</div><div class="lbl">Timezone</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-arrow"><i class="ti ti-arrow-right"></i></div>
+    <div class="cta-text">
+      <h3>Ready to free up <span>10+ hours a week</span> and focus on what drives results?</h3>
+      <p>Let's find the right support for your business.</p>
+    </div>
+    <a href="mailto:your@email.com" class="cta-btn">Book a discovery call →</a>
+  </div>
+</div>
+
+<div class="contact-links">
+  <a href="https://linkedin.com/in/bernboclaras" class="contact-link"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+  <a href="mailto:your@email.com" class="contact-link"><i class="ti ti-mail"></i>Send an email</a>
+  <a href="mailto:your@email.com" class="contact-link"><i class="ti ti-calendar"></i>Book a call</a>
+</div>
+
+<div class="footer">BERN BOCLARAS · EXECUTIVE ADMIN VA · DAVAO, PHILIPPINES</div>
+
+</body>
+</html>
