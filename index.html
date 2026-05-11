@@ -80,6 +80,24 @@ body{font-family:'Inter',sans-serif;background:var(--lightbg);color:var(--navy)}
 .contact-link{display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:4px;color:var(--navy);font-size:0.82rem;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none}
 .contact-link:hover{border-color:var(--teal);color:var(--teal)}
 .footer{background:var(--lightbg);padding:1rem 2rem;text-align:center;font-size:11px;color:var(--muted);letter-spacing:1.5px;border-top:1px solid var(--border)}
+.carousel-section{background:var(--lightbg);padding:2.5rem 2rem}
+.carousel-inner-li{max-width:800px;margin:0 auto}
+.carousel-track-wrap{overflow:hidden;border-radius:12px}
+.carousel-track{display:flex;gap:16px;transition:transform 0.4s ease}
+.post-card{min-width:340px;max-width:340px;background:var(--white);border-radius:12px;border:1px solid var(--border);overflow:hidden;flex-shrink:0}
+.post-header{display:flex;align-items:center;gap:10px;padding:14px 16px 10px}
+.post-avatar{width:40px;height:40px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:Poppins,sans-serif;font-size:13px;font-weight:700;color:var(--green);flex-shrink:0}
+.post-name{font-size:13px;font-weight:500;color:var(--navy)}
+.post-role{font-size:11px;color:var(--muted)}
+.post-square-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.post-body{padding:14px 16px}
+.post-text{font-size:12px;color:#3a3a3a;line-height:1.65;font-weight:300;max-height:100px;overflow:hidden;position:relative}
+.post-text::after{content:"";position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(transparent,#fff)}
+.ctrl-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--navy);font-size:16px}
+.ctrl-btn:hover{background:var(--navy);color:var(--white)}
+.carousel-dots{display:flex;gap:6px;align-items:center}
+.cdot{width:7px;height:7px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.2s}
+.cdot.active{background:var(--teal);width:20px;border-radius:4px}
 </style>
 </head>
 <body>
@@ -183,6 +201,35 @@ body{font-family:'Inter',sans-serif;background:var(--lightbg);color:var(--navy)}
     </div>
   </div>
 </div>
+<div class="carousel-section">
+<div class="carousel-inner-li">
+  <div class="section-label" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:0.4rem">On LinkedIn</div>
+  <h2 style="font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem">Latest posts</h2>
+  <div class="carousel-track-wrap">
+    <div class="carousel-track" id="litrack">
+      <div class="post-card">
+        <div class="post-header">
+          <div class="post-avatar">BB</div>
+          <div><div class="post-name">Bern Boclaras</div><div class="post-role">Executive Admin | Systems &amp; Workflow Support</div></div>
+        </div>
+        <img src="https://bernboclaras.github.io/bernboclaras/post1.jpg" alt="Benefits of a Virtual Assistant" class="post-square-img">
+        <div class="post-body">
+          <div class="post-text">You don't need more time. You need better support. Most business owners think they need to work more to grow. In reality, they're just stuck doing work they shouldn't be doing. A Virtual Assistant isn't just extra help — it's how you build systems that keep your business running without everything relying on you.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:1.2rem">
+    <button class="ctrl-btn" id="liprev"><i class="ti ti-arrow-left"></i></button>
+    <div class="carousel-dots"><div class="cdot active"></div></div>
+    <button class="ctrl-btn" id="linext"><i class="ti ti-arrow-right"></i></button>
+  </div>
+  <div style="text-align:center;margin-top:1rem">
+    <a href="https://linkedin.com/in/bernboclaras" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--teal);text-decoration:none"><i class="ti ti-brand-linkedin"></i> Follow on LinkedIn for more</a>
+  </div>
+</div>
+</div>
+<hr class="divider">
 <div class="cta-band">
   <div class="cta-inner">
     <div class="cta-arrow"><i class="ti ti-arrow-right"></i></div>
